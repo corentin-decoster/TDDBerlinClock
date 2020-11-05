@@ -52,7 +52,11 @@ class BerlinClock
             return 20;
 
     }
-    
+    function countSecond(string $str): int{
+       return 0;
+
+    }
+
 
 
 }

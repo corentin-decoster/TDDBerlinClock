@@ -81,4 +81,20 @@ class BerlinClockTest extends TestCase
         $this->assertEquals(15,$actual,"for RRRO we have 15 hour");
     }
 
+    public function test_second_shouldReturn00(){
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->countSecond("Y");
+
+        $this->assertEquals(00,$actual,"for Y we have 0 second");
+    }
+
+    public function test_second_shouldReturn01(){
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->countSecond("O");
+
+        $this->assertEquals(00,$actual,"for O we have 1 second");
+    }
+
 }
