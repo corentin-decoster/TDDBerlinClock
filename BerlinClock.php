@@ -26,5 +26,9 @@ class BerlinClock
      }
      return $count;
  }
+    function countSimpleHour(string $str): int{
+        return 00;
+    }
+
 
 }
