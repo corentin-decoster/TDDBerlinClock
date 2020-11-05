@@ -39,5 +39,10 @@ class BerlinClock
             return 04;
     }
 
+    function countFiveHour(string $str): int{
+        return 00;
+
+    }
+
 
 }
