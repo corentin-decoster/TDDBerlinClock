@@ -94,7 +94,7 @@ class BerlinClockTest extends TestCase
 
         $actual = $BerlinClock->countSecond("O");
 
-        $this->assertEquals(00,$actual,"for O we have 1 second");
+        $this->assertEquals(01,$actual,"for O we have 1 second");
     }
 
 }

@@ -53,7 +53,10 @@ class BerlinClock
 
     }
     function countSecond(string $str): int{
-       return 0;
+        if($str==="Y")
+            return 00;
+        if($str==="O")
+            return 01;
 
     }
 
