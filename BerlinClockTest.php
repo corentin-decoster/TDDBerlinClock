@@ -108,7 +108,7 @@ class BerlinClockTest extends TestCase
 
         $actual = $BerlinClock->totalCountClock("ORRRRRRROYYRYYRYYRYYYYYY");
 
-        $this->assertEquals("23:59:01",$actual,"for YOOOOOOOOOOOOOOOOOOOOOOO we have 23:59:01");
+        $this->assertEquals("23:59:01",$actual,"for ORRRRRRROYYRYYRYYRYYYYYY we have 23:59:01");
     }
 
     public function test_total_clock_shouldReturn165001(){
@@ -116,6 +116,6 @@ class BerlinClockTest extends TestCase
 
         $actual = $BerlinClock->totalCountClock("YRRROROOOYYRYYRYYRYOOOOO");
 
-        $this->assertEquals("16:50:01",$actual,"for YRRROROOOYYRYYRYYRYOOOOO we have 16:50:01");
+        $this->assertEquals("16:50:00",$actual,"for YRRROROOOYYRYYRYYRYOOOOO we have 16:50:01");
     }
 }

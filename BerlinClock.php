@@ -26,18 +26,16 @@ class BerlinClock
      }
      return $count;
  }
-    function countSimpleHour(string $str): int{
-        if($str==="OOOO")
-            return 00;
-        if($str==="ROOO")
-            return 01;
-        if($str==="RROO")
-            return 02;
-        if($str==="RRRO")
-            return 03;
-        if($str==="RRRR")
-            return 04;
-    }
+ function countSimpleHour(string $str): int{
+     $count = 0;
+     for($i = 0;$i<4;$i++){
+         if($str[$i]==="R"){
+             $count+=1;
+         }
+     }
+     return $count;
+
+ }
 
     function countFiveHour(string $str): int{
         if($str==="OOOO")
@@ -61,7 +59,42 @@ class BerlinClock
     }
 
     function totalCountClock(string $str): string{
-        return("00:00:00");
+      //count the seconds
+        $strTotal="";
+        $count=0;
+        $intSecond=$this->countSecond($str[0]);
+        $strSecond="";
+        if($intSecond===01){
+            $strSecond=":01";
+        }elseif ($intSecond===00){
+            $strSecond=":00";
+        }
+        //countMinute
+        $strMinute="";
+        $subStringFiveMinute=substr($str,9,19);
+        $intMinute= $this->countFiveMinute($subStringFiveMinute);
+        $subStringSimpleMinute=substr($str,20,23);
+        $intMinute+=$this->countSimpleMinute($subStringSimpleMinute);
+        if($intMinute<10){
+            $strMinute="0";
+        }
+        $strMinute.=(string)$intMinute;
+        $strMinute=":".$strMinute;
+
+        //count hour
+        $subStringSimpleHour=substr($str,5,8);
+        $subStringFiveHour=substr($str,1,4);
+        $intHour=$this->countSimpleHour($subStringSimpleHour);
+        $intHour+=$this->countFiveHour($subStringFiveHour);
+        $strHour="";
+        if($intHour<10){
+            $strHour="0";
+        }
+        $strHour.=(string)$intHour;
+        $strTotal=$strHour.$strMinute.$strSecond;
+
+        return $strTotal;
+
     }
 
 
