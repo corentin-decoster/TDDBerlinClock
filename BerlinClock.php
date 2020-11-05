@@ -16,4 +16,5 @@ class BerlinClock
     if($str==="YYYY")
         return 04;
  }
+ 
 }
