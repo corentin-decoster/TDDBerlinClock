@@ -27,7 +27,16 @@ class BerlinClock
      return $count;
  }
     function countSimpleHour(string $str): int{
-        return 00;
+        if($str==="OOOO")
+            return 00;
+        if($str==="ROOO")
+            return 01;
+        if($str==="RROO")
+            return 02;
+        if($str==="RRRO")
+            return 03;
+        if($str==="RRRR")
+            return 04;
     }
 
 
