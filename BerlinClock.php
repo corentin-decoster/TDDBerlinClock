@@ -40,9 +40,19 @@ class BerlinClock
     }
 
     function countFiveHour(string $str): int{
-        return 00;
+        if($str==="OOOO")
+            return 00;
+        if($str==="ROOO")
+            return 05;
+        if($str==="RROO")
+            return 10;
+        if($str==="RRRO")
+            return 15;
+        if($str==="RRRR")
+            return 20;
 
     }
+    
 
 
 }
