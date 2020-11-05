@@ -17,14 +17,14 @@ class BerlinClock
         return 04;
  }
  function countFiveMinute(string $str): int{
-     if($str==="OOOOOOOOOOO")
-         return 00;
-     if($str==="YOOOOOOOOOO")
-         return 05;
-     if($str==="YYROOOOOOOO")
-         return 15;
-     if($str==="YYRYYRYYRYO")
-         return 50;
 
+    $count=0;
+     for($i =0;$i<11;$i++){
+         if($str[$i]==='Y' || $str[$i]=== 'R'){
+             $count+=5;
+         }
+     }
+     return $count;
  }
+
 }
