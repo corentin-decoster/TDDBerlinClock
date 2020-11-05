@@ -96,5 +96,26 @@ class BerlinClockTest extends TestCase
 
         $this->assertEquals(01,$actual,"for O we have 1 second");
     }
+    public function test_total_clock_shouldReturn000000(){
+        $BerlinClock = new BerlinClock();
 
+        $actual = $BerlinClock->totalCountClock("YOOOOOOOOOOOOOOOOOOOOOOO");
+
+        $this->assertEquals("00:00:00",$actual,"for YOOOOOOOOOOOOOOOOOOOOOOO we have 00:00:00");
+    }
+    public function test_total_clock_shouldReturn235901(){
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->totalCountClock("ORRRRRRROYYRYYRYYRYYYYYY");
+
+        $this->assertEquals("23:59:01",$actual,"for YOOOOOOOOOOOOOOOOOOOOOOO we have 23:59:01");
+    }
+
+    public function test_total_clock_shouldReturn165001(){
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->totalCountClock("YRRROROOOYYRYYRYYRYOOOOO");
+
+        $this->assertEquals("16:50:01",$actual,"for YRRROROOOYYRYYRYYRYOOOOO we have 16:50:01");
+    }
 }

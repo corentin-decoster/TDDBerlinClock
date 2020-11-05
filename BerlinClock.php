@@ -60,6 +60,10 @@ class BerlinClock
 
     }
 
+    function totalCountClock(string $str): string{
+        return("00:00:00");
+    }
+
 
 
 }
